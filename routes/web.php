@@ -1,20 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/posts', function () {
-   $posts = [
-     ['id' => 1, 'title' => 'First Post'],
-     ['id' => 2, 'title' => 'Second Post'],
-   ];
-
-   return view('posts.index', [
-       'posts' => $posts
-   ]);
-});
-
-Route::get('/posts/{id}', function ($id) {
-   return view('posts.show', [
-       'id' => $id
-   ]);
-});
+Route::get('/', HomeController::class);
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{id}', [PostController::class, 'show']);
