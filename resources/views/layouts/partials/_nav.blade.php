@@ -2,9 +2,8 @@
     <div class="items-center justify-between flex">
         <h1 class="text-2xl font-medium leading-none text-gray-8000">Laravel Basic</h1>
         <div class="space-x-3">
-            <button class="text-sm leading-none text-indigo-700 p-3 bg-gray-100 rounded hover:bg-gray-200">Home
-            </button>
-            <button class="text-sm leading-none text-gray-600 p-3">Posts</button>
+            <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+            <x-nav-link href="/posts" :active="request()->is('posts')">Posts</x-nav-link>
         </div>
     </div>
 </div>
